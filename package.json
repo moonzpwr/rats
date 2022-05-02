@@ -2,7 +2,7 @@
   "name": "rats",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://moonzpwr.github.io/random-str",
+  "homepage": "https://moonzpwr.github.io/rats/",
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
