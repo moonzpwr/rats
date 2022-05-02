@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "quotes": [
+      1,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "no-undef": 2,
+    "global-strict": 0,
+    "no-extra-semi": 1,
+    "no-underscore-dangle": 0,
+    "no-console": 1,
+    "no-debugger": "warn",
+    "no-trailing-spaces": [
+      1,
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "no-unreachable": 1,
+    "no-alert": 0,
+    "no-non-null-assertion": 0,
+    "no-unused-vars": 1
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}
