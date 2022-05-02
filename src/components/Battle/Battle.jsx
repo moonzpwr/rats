@@ -36,7 +36,7 @@ export default function Battle() {
     }, [hero.life, enemy.life])
 
     const battle = () => {
-        if (!hero.attackTarget && !hero.blockTarget) {
+        if (!hero.attackTarget || !hero.blockTarget) {
             alert('choose what to attack and block')
             return
         }
