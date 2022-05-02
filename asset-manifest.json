@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rats/static/css/main.3633db34.css",
-    "main.js": "/rats/static/js/main.823f73c2.js",
+    "main.js": "/rats/static/js/main.a3df4ba2.js",
     "static/media/enemy.png": "/rats/static/media/enemy.3c61e932cc09d98e12be.png",
     "static/media/hero.png": "/rats/static/media/hero.a342d51f642ca8489afb.png",
     "index.html": "/rats/index.html",
     "main.3633db34.css.map": "/rats/static/css/main.3633db34.css.map",
-    "main.823f73c2.js.map": "/rats/static/js/main.823f73c2.js.map"
+    "main.a3df4ba2.js.map": "/rats/static/js/main.a3df4ba2.js.map"
   },
   "entrypoints": [
     "static/css/main.3633db34.css",
-    "static/js/main.823f73c2.js"
+    "static/js/main.a3df4ba2.js"
   ]
 }
