@@ -21,7 +21,10 @@ export default function Battle() {
         blockTarget: null,
     })
 
+    const [isOpen, setIsOpen] = useState(false)
+
     const now = new Date()
+    const parsedNow = `${now.getHours()}:${now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes()}:${now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds()}`;
 
     const [combatLog, setCombatLog] = useState([])
 
@@ -52,9 +55,9 @@ export default function Battle() {
                 ...prevState,
                 life: enemy.life - hero.attackPower,
             }))
-            setCombatLog(prevState => ([...prevState, `you hit enemy for ${hero.attackPower}, enemy have ${enemy.life - hero.attackPower}HP`]))
+            setCombatLog(prevState => ([...prevState, {text:`you hit enemy for ${hero.attackPower}, enemy have ${enemy.life - hero.attackPower}HP`, time: parsedNow}]))
         } else {
-            setCombatLog(prevState => ([...prevState, `enemy block! and have ${enemy.life}HP`]))
+            setCombatLog(prevState => ([...prevState, {text:`enemy block! and have ${enemy.life}HP`, time: parsedNow}]))
         }
 
         if (enemy.attackTarget !== hero.blockTarget) {
@@ -62,9 +65,9 @@ export default function Battle() {
                 ...prevState,
                 life: hero.life - enemy.attackPower
             }))
-            setCombatLog(prevState => ([...prevState, `enemy hit you for ${enemy.attackPower}, you have ${hero.life - enemy.attackPower}HP`]))
+            setCombatLog(prevState => ([...prevState, {text: `enemy hit you for ${enemy.attackPower}, you have ${hero.life - enemy.attackPower}HP`, time: parsedNow}]))
         } else {
-            setCombatLog(prevState => ([...prevState, `you block! and have ${hero.life}HP`]))
+            setCombatLog(prevState => ([...prevState, {text:`you block! and have ${hero.life}HP`, time: parsedNow}]))
         }
     }
 
@@ -108,12 +111,18 @@ export default function Battle() {
             </div>
         </div>
         <div className={s.combatLogs}>
-              {combatLog.map((el, i) => (
+              {combatLog.map(({time, text}, i) => (
                   <p key={i}>
-                      <span className={s.time}>{`${now.getHours()}:${now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes()}`}</span>
-                      &nbsp;{el}
+                      <span className={s.time}>{time}</span>
+                      &nbsp;{text}
                   </p>
-              ))}
+              )).reverse()}
+        </div>
+        <div className={s.mainContainer}>
+        <div className={`${s.container} ${isOpen ? s.isOpen : null}`}>
+            <div className={s.sidemenu} onClick={() => { setIsOpen(!isOpen)}}>side menu</div>
+            <div className={s.content}>content</div>
+        </div>
         </div>
     </div>
   );
