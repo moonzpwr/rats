@@ -10,9 +10,19 @@
   },
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "rules": {
+    "arrow-parens": 0,
+    "indent": [
+      "warn",
+      "tab"
+    ],
+    "no-tabs": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "linebreak-style": 0,
     "comma-dangle": 0,
     "quotes": [
       1,
@@ -39,6 +49,6 @@
     "no-unused-vars": 1
   },
   "extends": [
-    "eslint:recommended"
+    "airbnb/base", "eslint:recommended"
   ]
 }
